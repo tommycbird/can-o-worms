@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy73u35u7svn4"]
+
+[ext_resource type="Texture2D" uid="uid://b222d667273u0" path="res://art/background/hook.png" id="1_ufg8e"]
+[ext_resource type="Script" path="res://scripts/hook.gd" id="2_dgpr5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3f278"]
+size = Vector2(12.25, 22)
+
+[node name="Hook" type="Area2D"]
+script = ExtResource("2_dgpr5")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -928)
+scale = Vector2(4, 4)
+texture = ExtResource("1_ufg8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -8)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_3f278")

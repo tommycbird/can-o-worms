@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y8x30f7k8lci"
-path="res://.godot/imported/hole_overlay.png-17c4ff962462571ac5460a166b9443d2.ctex"
+uid="uid://12c04qdoob5o"
+path="res://.godot/imported/bear_on_ice.png-12ccfb3c33c2fa7ec06e3fa00bc73b58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/background/hole_overlay.png"
-dest_files=["res://.godot/imported/hole_overlay.png-17c4ff962462571ac5460a166b9443d2.ctex"]
+source_file="res://art/background/bear_on_ice.png"
+dest_files=["res://.godot/imported/bear_on_ice.png-12ccfb3c33c2fa7ec06e3fa00bc73b58.ctex"]
 
 [params]
 

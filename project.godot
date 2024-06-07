@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="can o' worms"
-run/main_scene="res://scenes/game_scene.tscn"
+run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+
+[display]
+
+window/size/viewport_width=1150
+window/size/viewport_height=3000
 
 [input_devices]
 

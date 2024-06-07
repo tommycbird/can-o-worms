@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dchjqpon43g8f"]
+
+[ext_resource type="Texture2D" uid="uid://ce08jplqdpmu1" path="res://art/sprites/fluffy.png" id="1_aupka"]
+[ext_resource type="Script" path="res://scenes/fish/fish.gd" id="2_ivb0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwn8v"]
+size = Vector2(116, 98.5)
+
+[node name="Fluffy" type="Area2D"]
+script = ExtResource("2_ivb0d")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(-157, -10)
+rotation = -0.0890118
+scale = Vector2(0.841818, 0.834615)
+texture = ExtResource("1_aupka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9, -6)
+shape = SubResource("RectangleShape2D_mwn8v")

@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://w2ccbvbtyvux"]
+
+[ext_resource type="Script" path="res://scenes/fishing.gd" id="1_5w2fn"]
+[ext_resource type="Texture2D" uid="uid://b8a8da6bqobfu" path="res://art/background/gradient.jpg" id="1_17puf"]
+[ext_resource type="Texture2D" uid="uid://12c04qdoob5o" path="res://art/background/bear_on_ice.png" id="2_hmnyg"]
+[ext_resource type="PackedScene" uid="uid://dy73u35u7svn4" path="res://scenes/hook.tscn" id="3_sk3uu"]
+[ext_resource type="Texture2D" uid="uid://dvmwjetmeyk1b" path="res://art/background/top_overlay.png" id="6_88k1j"]
+[ext_resource type="PackedScene" uid="uid://dchjqpon43g8f" path="res://scenes/fish/fluffy.tscn" id="7_3skdm"]
+[ext_resource type="Texture2D" uid="uid://8m3ddik5i701" path="res://art/background/foreground_ice.png" id="7_n6uil"]
+[ext_resource type="Texture2D" uid="uid://ce08jplqdpmu1" path="res://art/sprites/fluffy.png" id="8_dnobt"]
+[ext_resource type="PackedScene" uid="uid://bffoas5bo2bd3" path="res://scenes/spawner.tscn" id="8_fg0n5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxdor"]
+size = Vector2(151, 61)
+
+[node name="Game Scene" type="Node2D"]
+script = ExtResource("1_5w2fn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+anchor_mode = 0
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(561, 980)
+scale = Vector2(4, 4)
+
+[node name="Gradient" type="Sprite2D" parent="Background"]
+position = Vector2(3.5, 55)
+scale = Vector2(0.28675, 0.25)
+texture = ExtResource("1_17puf")
+
+[node name="Bear" type="Sprite2D" parent="Background"]
+position = Vector2(3.5, -144.5)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_hmnyg")
+
+[node name="Hook" parent="." instance=ExtResource("3_sk3uu")]
+position = Vector2(564, 916)
+
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="Spawner" parent="Spawners" instance=ExtResource("8_fg0n5")]
+position = Vector2(-864, 977)
+spawns = Array[PackedScene]([ExtResource("7_3skdm")])
+right = true
+start = true
+spawn_freq = 18.0
+
+[node name="Spawner2" parent="Spawners" instance=ExtResource("8_fg0n5")]
+position = Vector2(2167, 1413)
+spawns = Array[PackedScene]([ExtResource("7_3skdm")])
+start = true
+spawn_freq = 25.0
+
+[node name="Spawner3" parent="Spawners" instance=ExtResource("8_fg0n5")]
+position = Vector2(-1473, 1956)
+spawns = Array[PackedScene]([ExtResource("7_3skdm")])
+right = true
+start = true
+spawn_freq = 15.0
+
+[node name="Foreground" type="Node2D" parent="."]
+position = Vector2(561, 980)
+scale = Vector2(4, 4)
+
+[node name="TopOverlay" type="Sprite2D" parent="Foreground"]
+position = Vector2(-2.25, -219)
+scale = Vector2(0.25, 0.135417)
+texture = ExtResource("6_88k1j")
+
+[node name="IceOverlay" type="Sprite2D" parent="Foreground"]
+position = Vector2(3.75, -145)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_n6uil")
+
+[node name="Hole" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
+position = Vector2(565, 340)
+shape = SubResource("RectangleShape2D_lxdor")
+
+[node name="GameUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Score Icon" type="Sprite2D" parent="GameUI"]
+position = Vector2(97.75, 58)
+scale = Vector2(0.306364, 0.338462)
+texture = ExtResource("8_dnobt")
+
+[node name="Score" type="Label" parent="GameUI"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 204.0
+offset_top = 9.0
+offset_right = 397.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "0"
+
+[node name="Timer" type="Label" parent="GameUI"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 942.0
+offset_top = 8.0
+offset_right = 1135.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "60"
+horizontal_alignment = 2

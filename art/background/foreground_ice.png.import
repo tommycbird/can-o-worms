@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cngyysx1qvvd1"
-path="res://.godot/imported/top.png-72330c8deb156ee0e0ad52163a804436.ctex"
+uid="uid://8m3ddik5i701"
+path="res://.godot/imported/foreground_ice.png-86d9e893d08346ace8ab9186a23320c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/background/top.png"
-dest_files=["res://.godot/imported/top.png-72330c8deb156ee0e0ad52163a804436.ctex"]
+source_file="res://art/background/foreground_ice.png"
+dest_files=["res://.godot/imported/foreground_ice.png-86d9e893d08346ace8ab9186a23320c9.ctex"]
 
 [params]
 
